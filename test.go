@@ -7,15 +7,27 @@ import (
 )
 
 func main() {
-    reader := bufio.NewReader(os.Stdin)
+    var age string
+    var name string
     fmt.Print("What is your age: ")
-    //TODO: check for age to be no more than 3 digits
-    age, _ := reader.ReadString('\n')
+    age = read(age)
+    for age > "130" {
+      fmt.Print("Age invalid, please enter your age...")
+      age = read(age)
+    }
     fmt.Scanf(age)
+  
     fmt.Print("What is your name: ")
-    name, _ := reader.ReadString('\n')
+    name = read(name)
     fmt.Scanf(name)
     fmt.Print("Your name is ",  name, " and you are ", age, " years old")
+}
+
+
+func read(answer string) string {
+    reader := bufio.NewReader(os.Stdin)
+    answer, _ = reader.ReadString('\n')
+    return answer
 }
 
 
