@@ -7,9 +7,8 @@ import (
 )
 
 func main() {
-    var age string
-    var name string
-    fmt.Print("What is your age: ")
+    var age, name string
+    fmt.Print("How old are you?")
     age = read(age)
     for age > "130" {
       fmt.Print("Age invalid, please enter your age...")
